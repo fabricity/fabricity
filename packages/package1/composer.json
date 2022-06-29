@@ -1,0 +1,14 @@
+{
+    "name": "fabricity/package2",
+    "description": "test package",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Fabricity\\Package2\\": "src/"
+        }
+    },
+    "require": {
+        "php": "^7.4"
+    }
+}
