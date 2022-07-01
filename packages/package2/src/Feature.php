@@ -8,6 +8,6 @@ final class Feature
 {
     public static function demo(): string
     {
-        return 'feature';
+        return 'feature 2';
     }
 }
