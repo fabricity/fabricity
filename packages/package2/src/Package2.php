@@ -8,6 +8,6 @@ final class Package2
 {
     public static function demo(): string
     {
-        return 'demo package2';
+        return 'demo package2 coool';
     }
 }
