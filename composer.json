@@ -15,7 +15,7 @@
         }
     },
     "replace": {
-        "fabricity/package1": "1.0.0",
-        "fabricity/package2": "1.0.0"
+        "fabricity/package1": "1.0.1",
+        "fabricity/package2": "1.0.1"
     }
 }
