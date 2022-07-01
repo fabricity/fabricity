@@ -15,7 +15,7 @@
         }
     },
     "replace": {
-        "fabricity/package1": "self.version",
-        "fabricity/package2": "self.version"
+        "fabricity/package1": "1.0.0",
+        "fabricity/package2": "1.0.0"
     }
 }

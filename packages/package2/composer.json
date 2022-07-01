@@ -10,5 +10,8 @@
     },
     "require": {
         "php": "^7.4"
+    },
+    "conflict": {
+        "fabricity/package1": "<1.0.0"
     }
 }
