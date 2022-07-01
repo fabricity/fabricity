@@ -36,8 +36,8 @@ jobs:
           repository_organization: 'fabricity'
           repository_name: '${{ matrix.package.split_repository }}'
           branch: "master"
-          user-name: "GitHub Action"
-          user-email: "action@github.com"
+          user_name: "GitHub Action"
+          user_email: "action@github.com"
 
       # with tag
       -
@@ -49,5 +49,5 @@ jobs:
           repository_organization: 'fabricity'
           repository_name: '${{ matrix.package.split_repository }}'
           branch: "master"
-          user-name: "GitHub Action"
-          user-email: "action@github.com"
+          user_name: "GitHub Action"
+          user_email: "action@github.com"
