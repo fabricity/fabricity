@@ -1,0 +1,21 @@
+{
+    "name": "fabricity/fabricity",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "php": "^7.4"
+    },
+    "require-dev": {
+        "symplify/monorepo-builder": "^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fabricity\\Package1\\": "packages/package1/src/",
+            "Fabricity\\Package2\\": "packages/package2/src/"
+        }
+    },
+    "replace": {
+        "fabricity/package1": "self.version",
+        "fabricity/package2": "self.version"
+    }
+}
