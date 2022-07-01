@@ -12,6 +12,6 @@
         "php": "^7.4"
     },
     "conflict": {
-        "fabricity/package1": "<1.1.0"
+        "fabricity/package1": "<2.0.0"
     }
 }
