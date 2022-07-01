@@ -35,6 +35,7 @@ jobs:
           package_directory: 'packages/${{ matrix.package.local_path }}'
           repository_organization: 'fabricity'
           repository_name: '${{ matrix.package.split_repository }}'
+          branch: "master"
           user_name: "fabricity"
           user_email: "info@fabricity.com"
 
@@ -47,5 +48,6 @@ jobs:
           package_directory: 'packages/${{ matrix.package.local_path }}'
           repository_organization: 'fabricity'
           repository_name: '${{ matrix.package.split_repository }}'
+          branch: "master"
           user_name: "fabricity"
           user_email: "info@fabricity.com"
