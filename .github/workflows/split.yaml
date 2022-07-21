@@ -11,43 +11,52 @@ env:
   GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
 jobs:
+  provide_packages_json:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.0
+          coverage: none
+      - uses: "ramsey/composer-install@v2"
+      - id: output_data
+        run: echo "::set-output name=matrix::$(vendor/bin/monorepo-builder packages-json)"
+    outputs:
+      matrix: ${{ steps.output_data.outputs.matrix }}
+
   packages_split:
     runs-on: ubuntu-latest
 
     strategy:
       fail-fast: false
       matrix:
-        package:
-          -
-            local_path: 'package1'
-            split_repository: 'package1'
-          - local_path: 'package2'
-            split_repository: 'package2'
+        package: ${{fromJson(needs.provide_packages_json.outputs.matrix)}}
 
     steps:
       -   uses: actions/checkout@v2
-
       # no tag
       -
         if: "!startsWith(github.ref, 'refs/tags/')"
+        name: Monorepo Split of ${{ matrix.package }}
         uses: "symplify/monorepo-split-github-action@2.1"
         with:
-          package_directory: 'packages/${{ matrix.package.local_path }}'
+          package_directory: 'packages/${{ matrix.package }}'
           repository_organization: 'fabricity'
-          repository_name: '${{ matrix.package.split_repository }}'
+          repository_name: '${{ matrix.package }}'
           branch: "master"
           user_name: "GitHub Action"
           user_email: "action@github.com"
-
       # with tag
       -
         if: "startsWith(github.ref, 'refs/tags/')"
+        name: Monorepo Tagged Split of ${{ matrix.package }}
         uses: "symplify/monorepo-split-github-action@2.1"
         with:
           tag: ${GITHUB_REF#refs/tags/}
-          package_directory: 'packages/${{ matrix.package.local_path }}'
+          package_directory: 'packages/${{ matrix.package }}'
           repository_organization: 'fabricity'
-          repository_name: '${{ matrix.package.split_repository }}'
+          repository_name: '${{ matrix.package }}'
           branch: "master"
           user_name: "GitHub Action"
           user_email: "action@github.com"
