@@ -20,7 +20,7 @@ jobs:
 
             - uses: frankdejonge/use-github-token@1.0.2
               with:
-                  authentication: '${{ secrets.SPLITTER_SECRET }}'
+                  authentication: 'fabricity:${{ secrets.SPLITTER_SECRET }}'
 
             -   name: Cache splitsh-lite
                 uses: actions/cache@v3
