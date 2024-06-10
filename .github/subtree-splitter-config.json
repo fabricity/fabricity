@@ -1,0 +1,9 @@
+{
+  "subtree-splits": [
+    {
+      "name": "package-grid",
+      "directory": "package/grid",
+      "target": "git@github.com:fabricity/grid-package"
+    }
+  ]
+}
