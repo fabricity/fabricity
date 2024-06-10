@@ -15,8 +15,13 @@ jobs:
         steps:
             -   uses: actions/checkout@v4
                 with:
-                    persist-credentials: true
+                    persist-credentials: false
                     fetch-depth: 0
+
+            - uses: frankdejonge/use-github-token@1.0.2
+              with:
+                  authentication: 'fabricity:${{ secrets.SPLITTER_TOKEN }}'
+                  user_name: 'fabricity'
 
             -   name: Cache splitsh-lite
                 uses: actions/cache@v3
