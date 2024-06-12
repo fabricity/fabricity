@@ -16,6 +16,15 @@
   "bugs": {
     "url": "https://github.com/fabricity/fabricity/issues"
   },
+  "files": ["dist"],
+  "main": "./dist/datagrid.umd.cjs",
+  "module": "./dist/datagrid.js",
+  "exports": {
+    ".": {
+      "import": "./dist/datagrid.js",
+      "require": "./dist/datagrid.umd.cjs"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build && esbuild dist/datagrid.js --minify --outfile=dist/datagrid.js --allow-overwrite",
