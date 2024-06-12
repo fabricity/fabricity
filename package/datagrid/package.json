@@ -1,0 +1,30 @@
+{
+  "name": "@fabricity/datagrid",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Typescript css grid",
+  "keywords": [
+    "typescript",
+    "gird"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabricity/datagrid-package.git"
+  },
+  "homepage": "https://github.com/fabricity/fabricity#readme",
+  "bugs": {
+    "url": "https://github.com/fabricity/fabricity/issues"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build && esbuild dist/datagrid.js --minify --outfile=dist/datagrid.js --allow-overwrite",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@tsconfig/strictest": "^2.0.5",
+    "@types/node": "^20.12.12",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.0"
+  }
+}

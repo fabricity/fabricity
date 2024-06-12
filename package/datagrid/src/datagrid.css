@@ -1,0 +1,24 @@
+.dg-body {
+    width: 100%;
+    overflow-x: auto;
+    border: 5px solid green;
+}
+
+.dg-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, auto);
+}
+
+.dg-row {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: subgrid;
+}
+.dg-cell {
+    padding: 10px;
+    border-left: 1px solid red;
+    border-right: 1px solid red;
+    /*border: 1px red solid; */
+    white-space: nowrap;
+}
