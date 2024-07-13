@@ -1,4 +1,4 @@
-name: 'Split up the monorepo into subrepositories'
+name: 'Splitter'
 
 on:
     push:

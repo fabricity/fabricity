@@ -2,7 +2,7 @@
   "subtree-splits": [
     {
       "name": "package-datagrid",
-      "directory": "package/datagrid",
+      "directory": "src/package/datagrid",
       "target": "git@github.com:fabricity/datagrid-package"
     }
   ]
