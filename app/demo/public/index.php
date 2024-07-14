@@ -1,9 +1,18 @@
 <?php
 
-use App\Kernel;
+declare(strict_types=1);
 
-require_once dirname(__DIR__).'/vendor/autoload_runtime.php';
+use App\Demo\Kernel;
 
-return function (array $context) {
+file_exists(dirname(__DIR__).'/vendor/autoload_runtime.php') ?
+	require_once dirname(__DIR__).'/vendor/autoload_runtime.php' :
+	require_once dirname(__DIR__).'/../../vendor/autoload_runtime.php';
+
+$_SERVER['APP_RUNTIME_OPTIONS'] = [
+	'disable_dotenv' => ('true' === ($_SERVER['APP_DISABLE_DOTENV'] ?? false)),
+	'project_dir' => dirname(__DIR__),
+];
+
+return static function (array $context) {
     return new Kernel($context['APP_ENV'], (bool) $context['APP_DEBUG']);
 };

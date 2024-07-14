@@ -1,6 +1,8 @@
 {
+    "name": "fabricity/fabricity",
+    "description": "fabricity monorepo",
     "type": "project",
-    "license": "proprietary",
+    "license": "MIT",
     "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
@@ -17,7 +19,8 @@
     },
     "require-dev": {
         "symfony/maker-bundle": "^1.50",
-        "symfony/web-profiler-bundle": "5.4.*"
+        "symfony/web-profiler-bundle": "5.4.*",
+        "symplify/monorepo-builder": "^11.2"
     },
     "config": {
         "allow-plugins": {
@@ -34,12 +37,7 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\Demo\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "App\\Tests\\": "tests/"
+            "App\\Demo\\": "app/demo/src/"
         }
     },
     "replace": {
@@ -47,25 +45,22 @@
         "symfony/polyfill-iconv": "*",
         "symfony/polyfill-php72": "*"
     },
-    "scripts": {
-        "auto-scripts": {
-            "cache:clear": "symfony-cmd",
-            "assets:install %PUBLIC_DIR%": "symfony-cmd"
-        },
-        "post-install-cmd": [
-            "@auto-scripts"
-        ],
-        "post-update-cmd": [
-            "@auto-scripts"
-        ]
-    },
     "conflict": {
         "symfony/symfony": "*"
+    },
+    "scripts": {
+        "monorepo-validate": "monorepo-builder validate -c config/monorepo-builder.php",
+        "post-install-cmd": [
+            "@monorepo-validate"
+        ],
+        "post-update-cmd": [
+            "@monorepo-validate"
+        ]
     },
     "extra": {
         "symfony": {
             "allow-contrib": false,
-            "require": "^5.4"
+            "require": "5.4.*"
         }
     }
 }
