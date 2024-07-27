@@ -1,0 +1,9 @@
+includes:
+    - %currentWorkingDirectory%/vendor/phpstan/phpstan/conf/bleedingEdge.neon
+    - %currentWorkingDirectory%/vendor/phpstan/phpstan-deprecation-rules/rules.neon
+
+parameters:
+    level: max
+    paths:
+        - %currentWorkingDirectory%/app/demo/src
+        - %currentWorkingDirectory%/src/bundle/data-grid/src
