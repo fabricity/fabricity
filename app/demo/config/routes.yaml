@@ -1,3 +1,6 @@
 controllers:
     resource: ../src/Controller/
     type: annotation
+
+fabricity_grid:
+    resource: '@FabricityDataGridBundle/config/routes.php'

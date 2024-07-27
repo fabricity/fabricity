@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 $finder = (new PhpCsFixer\Finder())
     ->in(__DIR__.'/../app/*/src')
-    //->in(__DIR__.'/../src/bundle/*/src')
+    ->in(__DIR__.'/../src/bundle/*/config')
+    ->in(__DIR__.'/../src/bundle/*/src')
 ;
 
 return (new PhpCsFixer\Config())

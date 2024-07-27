@@ -1,5 +1,5 @@
 {
-  "name": "@fabricity/datagrid",
+  "name": "@fabricity/data-grid",
   "version": "0.0.1",
   "type": "module",
   "description": "Typescript css grid",
