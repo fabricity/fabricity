@@ -20,6 +20,7 @@
         "symfony/yaml": "5.4.*"
     },
     "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.59",
         "symfony/maker-bundle": "^1.50",
         "symfony/web-profiler-bundle": "5.4.*",
         "symplify/monorepo-builder": "^11.2"
@@ -57,7 +58,8 @@
         "symfony/symfony": "*"
     },
     "scripts": {
-        "monorepo-validate": "monorepo-builder validate -c config/monorepo-builder.php",
+        "monorepo-validate": "monorepo-builder validate --config=config/.monorepo-builder.dist.php",
+        "phpcs": "php-cs-fixer fix --config=config/.php-cs-fixer.dist.php",
         "post-install-cmd": [
             "@monorepo-validate"
         ],
